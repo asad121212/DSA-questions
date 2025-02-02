@@ -1,0 +1,67 @@
+#include<stdio.h>
+int main(){
+    int a[10][10], arows,acolumns;
+    printf("Enter the number of rows and column of matrix a : ");
+    scanf("%d %d",&arows,&acolumns);
+    printf("Enter the elements of matrix a :\n");
+    for(int i=0;i<arows;i++)
+    {
+        for(int j=0;j<acolumns;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("Elements of a matrix are : \n");
+    for(int i=0;i<arows;i++){
+
+        for(int j=0;j<acolumns;j++){
+            printf("%d ",a[i][j]);
+        }
+        printf("\n");
+    }
+    int b[10][10], brows,bcolumns;
+    printf("Enter the number of rows and column of matrix b : ");
+    scanf("%d %d",&brows,&bcolumns);
+    printf("Enter the elements of matrix b :\n");
+    for(int i=0;i<brows;i++)
+    {
+        for(int j=0;j<bcolumns;j++){
+            scanf("%d",&b[i][j]);
+        }
+    }
+    printf("Elements of a matrix are : \n");
+    for(int i=0;i<brows;i++){
+
+        for(int j=0;j<bcolumns;j++){
+            printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
+
+    int result[10][10];
+    int sum =0;
+    if(arows==brows && acolumns==bcolumns){
+        for(int i=0;i<arows;i++){
+            for(int j=0;j<bcolumns;j++){
+                for (int k = 0; k < brows; k++)
+                {
+                    sum+=a[i][k]*b[k][j];
+                }
+                result[i][j]=sum;
+                sum=0;
+        }
+    }
+    }
+
+    else{
+        printf("Matrices are not compatible for multiplication");
+    }
+    printf("Resultant matrix is : \n");
+    for(int i=0;i<arows;i++){
+        for(int j=0;j<bcolumns;j++){
+            printf("%d ",result[i][j]);
+            }
+            printf("\n");
+            }
+            return 0;
+            
+}
